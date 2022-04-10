@@ -14,7 +14,7 @@
         "<node_internals>/**"
       ],
       "args": [
-        "${workspaceFolder}/jishengzuhejicheng.js"
+        "${workspaceFolder}/lazyMan.js"
       ]
     }
   ]
