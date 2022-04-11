@@ -22,8 +22,8 @@ const add = (a,b,c) => {
 
 const a = currying(add, 1)
 
-const b = a(3)
+const b = a(3)(4)
 
-c = b(4)
+// c = b(4)
 
-console.log(c)
+console.log(b)
