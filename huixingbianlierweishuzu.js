@@ -1,23 +1,29 @@
-function traverse(arr) {
-  let res = [];
-  while (arr.length) {
-    res = res.concat(arr.shift())
-
-    for (let i = 0; i < arr.length; i ++) {
-      res.push(arr[i].pop())
+var traverse = function(matrix) {
+  const res = []
+  while (matrix.length) {
+    const first = matrix.shift()
+    res.push(...first)
+    for (const m of matrix) {
+      let val = m.pop()
+      if (val)
+        res.push(val)
+      m.reverse()
     }
-
-    res = res.concat((arr.pop() || []).reverse())
-
-    for (let i = arr.length - 1; i >= 0; i --) {
-      res.push(arr[i].shift())
-    }
+    matrix.reverse()
   }
-
   return res
-}
+};
 
-let a = [[1,2,3], [8,9,4], [7,6,5]]
+// let a = [
+//   [1, 2, 3],
+//   [8, 9, 4],
+//   [7, 6, 5]
+// ]
+let a = [
+  [7],
+  [9],
+  [6]
+]
 let tt = traverse(a)
 
 console.log(tt)
