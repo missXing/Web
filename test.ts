@@ -145,11 +145,22 @@
 //     return true
 //   }
 // }
-const arya = [1, 'dd', '5', false] as const
+// const arya = [1, 'dd', '5', false] as const
 
-const dd = typeof arya
+// const dd = typeof arya
 
-console.log(dd)
+// console.log(dd)
+
+function copyFields<T extends U, U>(target: T, source: U): T {
+  for (let id in source) {
+      target[id] = (<T>source)[id];
+  }
+  return target;
+}
+
+let x = { a: 1, b: 2, c: 3};
+
+copyFields(x, { b: 10, d: 20 });
 
 
 
